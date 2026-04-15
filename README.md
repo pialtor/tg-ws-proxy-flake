@@ -1,7 +1,7 @@
 # tg-ws-proxy-flake
 
-**Nix flake для tg-ws-proxy** - локального SOCKS5-прокси, который сильно
-ускоряет Telegram Desktop через WebSocket.
+**Nix flake для tg-ws-proxy** - локального прокси, для ускорения Telegram
+Desktop.
 
 Неофициальная Nix-упаковка оригинального проекта
 [Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) (MIT-лицензия).
@@ -14,7 +14,9 @@
 nix run github:pialtor/tg-ws-proxy-flake -- --port 1080
 ```
 
-Прокси запустится на 127.0.0.1:1080 SECRET для MTPROTO будет в терминале.
+Прокси запустится на 127.0.0.1:1080
+
+SECRET для MTPROTO будет в терминале.
 
 ## Другой порт или слушать на всех интерфейсах
 
