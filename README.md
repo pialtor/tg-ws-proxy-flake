@@ -1,32 +1,35 @@
 # tg-ws-proxy-flake
 
-**Nix flake для tg-ws-proxy** - локального SOCKS5-прокси, который сильно ускоряет Telegram Desktop через WebSocket.
+**Nix flake для tg-ws-proxy** - локального SOCKS5-прокси, который сильно
+ускоряет Telegram Desktop через WebSocket.
 
-Неофициальная Nix-упаковка оригинального проекта [Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) (MIT-лицензия).
+Неофициальная Nix-упаковка оригинального проекта
+[Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) (MIT-лицензия).
 
 ## Быстрый старт
 
 Запуск прокси:
+
 ```bash
 nix run github:pialtor/tg-ws-proxy-flake -- --port 1080
 ```
-Прокси запустится на 127.0.0.1:1080
-SECRET для MTPROTO будет в терминале.
 
+Прокси запустится на 127.0.0.1:1080 SECRET для MTPROTO будет в терминале.
 
 ## Другой порт или слушать на всех интерфейсах
+
 ```bash
 nix run github:pialtor/tg-ws-proxy-flake -- --port 8080 --host 0.0.0.0
 ```
 
-
 ## Посмотреть все возможные параметры
+
 ```bash
 nix run github:pialtor/tg-ws-proxy-flake -- --help
 ```
 
-
 ## Использование как input в своём flake.nix
+
 ```nix
 {
   inputs = {
@@ -46,22 +49,25 @@ nix run github:pialtor/tg-ws-proxy-flake -- --help
 ```
 
 ### После этого:
+
 ```bash
 nix run .#tg-ws-proxy -- --port 1080
 # или
 nix build .#tg-ws-proxy
 ```
 
-
 ## Что внутри
-- `packages.<system>.default` - готовый пакет прокси (можно использовать в `environment.systemPackages`, Home Manager и т.д.)
+
+- `packages.<system>.default` - готовый пакет прокси (можно использовать в
+  `environment.systemPackages`, Home Manager и т.д.)
 - `apps.<system>.default` - приложение для быстрого запуска через `nix run`
 - Поддержка двух архитектур: `x86_64-linux` и `aarch64-linux`
 - Полная воспроизводимость благодаря `flake.lock`
 
-
 ## Лицензия
+
 MIT (как у оригинального проекта).
 
-Весь код прокси принадлежит [Flowseal](https://github.com/Flowseal) и контрибьюторам оригинального репозитория.  
+Весь код прокси принадлежит [Flowseal](https://github.com/Flowseal) и
+контрибьюторам оригинального репозитория.\
 Этот flake - только удобная Nix-обёртка.
